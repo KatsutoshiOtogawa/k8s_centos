@@ -4,7 +4,10 @@ yum update -y
 
 yum install -y yum-plugin-versionlock
 
-yum install -y neovim
+# centos7系系に今後/usr/binにnvimが追追される事事無いので直接追加。
+curl -fsSL https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.tar.gz | \
+    gunzip | \
+    tar x --strip-components=1 -C /usr/
 yum install -y nmap
 yum install -y mlocate
 
